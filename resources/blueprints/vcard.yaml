@@ -1,0 +1,73 @@
+title: vCard
+handle: vcard
+
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Naam
+      required: true
+      width: 50
+
+  -
+    handle: job_description
+    field:
+      type: text
+      display: Functie
+      width: 50
+
+  -
+    handle: mobile_phone
+    field:
+      type: text
+      display: Mobiel
+      width: 50
+      input_type: tel
+
+  -
+    handle: phone_number
+    field:
+      type: text
+      display: Telefoon
+      width: 50
+      input_type: tel
+
+  -
+    handle: email
+    field:
+      type: text
+      display: E-mailadres
+      width: 50
+      input_type: email
+
+  -
+    handle: website
+    field:
+      type: text
+      display: Website
+      width: 50
+
+  -
+    handle: org
+    field:
+      type: text
+      display: Organisatie
+      width: 50
+
+  -
+    handle: address
+    field:
+      type: textarea
+      display: Adres
+      instructions: 'Elke regel op een nieuwe lijn.'
+
+  -
+    handle: qr_code
+    field:
+      type: assets
+      display: QR Code
+      container: assets
+      max_files: 1
+      read_only: true
+      instructions: 'Automatisch gegenereerd bij opslaan.'

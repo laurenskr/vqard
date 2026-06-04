@@ -1,0 +1,39 @@
+<?php
+
+namespace YourName\StatamicVcard;
+
+use Illuminate\Support\Facades\Event;
+use Statamic\Providers\AddonServiceProvider;
+use Statamic\Events\EntrySaved;
+use YourName\StatamicVcard\Listeners\GenerateVcardQrCode;
+
+class ServiceProvider extends AddonServiceProvider
+{
+    public function bootAddon(): void
+    {
+        // Config
+        $this->mergeConfigFrom(__DIR__.'/../config/vcard.php', 'vcard');
+
+        $this->publishes([
+            __DIR__.'/../config/vcard.php' => config_path('vcard.php'),
+        ], 'vcard-config');
+
+        // Views — check for local project override first
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'vcard');
+
+        $this->publishes([
+            __DIR__.'/../resources/views' => resource_path('views/vendor/vcard'),
+        ], 'vcard-views');
+
+        // Blueprint
+        $this->publishes([
+            __DIR__.'/../resources/blueprints' => resource_path('blueprints/collections/vcards'),
+        ], 'vcard-blueprint');
+
+        // Routes
+        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+
+        // Listener
+        Event::listen(EntrySaved::class, GenerateVcardQrCode::class);
+    }
+}
