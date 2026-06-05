@@ -1,5 +1,5 @@
 {
-    "name": "yourname/statamic-vcard",
+    "name": "qabana/statamic-vcard",
     "description": "Digital business cards with QR codes and .vcf download for Statamic.",
     "type": "statamic-addon",
     "license": "MIT",
