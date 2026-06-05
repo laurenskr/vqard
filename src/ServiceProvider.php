@@ -1,6 +1,6 @@
 <?php
 
-namespace YourName\StatamicVcard;
+namespace Qabana\StatamicVcard;
 
 use Illuminate\Support\Facades\Event;
 use Statamic\Providers\AddonServiceProvider;
