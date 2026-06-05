@@ -1,6 +1,6 @@
 <?php
 
-namespace YourName\StatamicVcard\Http\Controllers;
+namespace Qabana\StatamicVcard\Http\Controllers;
 
 use Illuminate\Http\Response;
 use Statamic\Facades\Entry;
