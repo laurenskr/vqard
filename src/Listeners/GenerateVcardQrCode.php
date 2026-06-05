@@ -21,7 +21,8 @@ class GenerateVcardQrCode
         }
 
         $slug      = $entry->slug();
-        $url       = url($entry->url());
+        
+        $url = rtrim(config('app.url'), '/') . '/' . config('vcard.route_prefix', 'vcards') . '/' . $slug;
         $container = config('vcard.asset_container', 'assets');
         $folder    = config('vcard.asset_folder', 'qrcodes');
         $size      = config('vcard.qr_size', 400);
