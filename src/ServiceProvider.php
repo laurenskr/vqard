@@ -5,7 +5,7 @@ namespace Qabana\StatamicVcard;
 use Illuminate\Support\Facades\Event;
 use Statamic\Providers\AddonServiceProvider;
 use Statamic\Events\EntrySaved;
-use YourName\StatamicVcard\Listeners\GenerateVcardQrCode;
+use Qabana\StatamicVcard\Listeners\GenerateVcardQrCode;
 
 class ServiceProvider extends AddonServiceProvider
 {
