@@ -34,12 +34,13 @@ class GenerateVcardQrCode
             ->setForegroundColor(new Color($r, $g, $b))
             ->setBackgroundColor(new Color(255, 255, 255));
 
-        $result   = (new PngWriter())->write($qrCode);
-        $filename = "{$folder}/{$slug}.png";
+        $result = (new PngWriter())->write($qrCode);
+
+        $filename       = "{$folder}/{$slug}.png";
+        $assetContainer = AssetContainer::find($container);
 
         Storage::disk($container)->put($filename, $result->getString());
 
-        $assetContainer = AssetContainer::find($container);
         $asset = $assetContainer->asset($filename)
             ?? (new Asset)->container($assetContainer)->path($filename);
         $asset->save();

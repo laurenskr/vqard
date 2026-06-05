@@ -18,7 +18,7 @@ class ServiceProvider extends AddonServiceProvider
             __DIR__.'/../config/vcard.php' => config_path('vcard.php'),
         ], 'vcard-config');
 
-        // Views — check for local project override first
+        // Views
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'vcard');
 
         $this->publishes([
@@ -33,7 +33,7 @@ class ServiceProvider extends AddonServiceProvider
         // Routes
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
 
-        // Listener
+        // Register the listener directly — no EventServiceProvider needed in the host app
         Event::listen(EntrySaved::class, GenerateVcardQrCode::class);
     }
 }
