@@ -1,6 +1,6 @@
 <?php
 
-namespace YourName\StatamicVcard\Listeners;
+namespace Qabana\StatamicVcard\Listeners;
 
 use Statamic\Events\EntrySaved;
 use Statamic\Facades\AssetContainer;
