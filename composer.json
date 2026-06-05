@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": "^8.*",
+        "php": ">=8.3",
         "statamic/cms": "^5.0, ^6.0",
         "endroid/qr-code": "^6.0"
     },
